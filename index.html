@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="generator" content="AsciiDoc 10.2.0" />
-<title>ladish, LADI Session Handler</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="AsciiDoc 10.2.0">
+<meta name="keywords" content="LADI, JACK, jack-audio-connection-kit, session management">
+<title>LADI Session Handler</title>
 <style type="text/css">
 /*
  * AsciiDoc 'ladi' theme, based on 'volnitsky' theme for xhtml11 and html5 backends.
@@ -32,6 +31,7 @@ thead, p.table.header,
   font-family: Candara,Arial,sans-serif;
 }
 
+a.image { border-bottom: 0; }
 
 #toc a {
     border-bottom: 1px dotted #999999;
@@ -60,17 +60,42 @@ strong {
 h1, h2, h3, h4, h5, h6 {
   color: #666688;
   margin-bottom: 0.5em;
+  margin-right: 1em;
   line-height: 1.3;
   letter-spacing:+0.15em;
 }
 
-h1, h2, h3 { border-bottom: 2px solid #ccd; }
-h2 { padding-top: 0.5em; }
-h3 { float: left; }
-h3 + * { clear: left; }
+h1, h2, h3, h4, h5, h6 {
+  margin-left: 0em;
+}
+
+/* h1 { margin-left: 2em; } */
+h2 { margin-left: 2em; }
+/* h3 { margin-left: 4em; } */
+/* h4 { margin-left: 5em; } */
+/* h5 { margin-left: 6em; } */
+/* h6 { margin-left: 7em; } */
+
+h2 { border-bottom: 4px solid #ccd; }
+h3 { border-bottom: 2px dotted #ccd; }
+/* h2, h3 { border-bottom: 2px solid #ccd; } */
+/* h2 { padding-top: 0.5em; } */
+/* h3 { float: left; } */
+/* h3 + * { clear: left; } */
+
+div.banner {
+    background: #004455;
+    text-align: center;
+    color: #C6E9AF;
+    padding: 0;
+    margin: 0;
+}
 
 div.sectionbody {
-  margin-left: 0;
+  margin-top: 0;
+  margin-left: 3em;
+  margin-right: 1em;
+  margin-bottom: 1em;
 }
 
 hr {
@@ -78,6 +103,8 @@ hr {
 }
 
 p {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
@@ -100,18 +127,18 @@ pre {
 #footer {
   font-size: small;
   border-top: 2px solid silver;
-  padding-top: 0.5em;
-  margin-top: 4.0em;
+  margin: 0;
 }
 
 #footer-text {
-  float: left;
-  padding-bottom: 0.5em;
+  /* float: left; */
+  padding: 1em;
+  text-align: center;
 }
 
 #footer-badges {
   float: right;
-  padding-bottom: 0.5em;
+  padding: 0.5em;
 }
 
 #preamble {
@@ -131,8 +158,8 @@ div.admonitionblock {
   margin-bottom: 2.5em;
 }
 
-div.content { /* Block element content. */
-  padding: 0;
+#content { /* Block element content. */
+  margin: 2em;
 }
 
 /* Block element titles. */
@@ -333,10 +360,8 @@ div.toclevel3 { margin-left: 4em; font-size: 0.8em; }
 div.toclevel4 { margin-left: 6em; font-size: 0.8em; }
 
 body {
-  margin: 1em 5%;
-  max-width:  55em;
-  padding-left: 0;
-
+  margin: 0;
+  padding: 0;
 }
 
 .monospaced, tt, div.listingblock > div.content {
@@ -347,12 +372,23 @@ body {
   line-height: 1.2em;
 }
 
-.paragraph p  {
-  line-height: 1.5em;
-  margin-top: 1em;
+#header {
+  text-align: center;
+  margin: 2em;
 }
 
-.paragraph p, li, dd, .content { max-width: 45em; }
+#toc {
+  text-align: left;
+  margin-left: 3em;
+  max-width: 80%;
+}
+
+.paragraph p {
+  line-height: 1.5em;
+  /* margin: 1em; */
+}
+
+.paragraph p, li, dd, .content { max-width: 80em; }
 .admonitionblock               { max-width: 35em; }
 
 div.sectionbody div.ulist > ul > li {
@@ -650,49 +686,59 @@ asciidoc.install();
 <link rel="apple-touch-icon" type="image/x-icon" sizes="128x128" href="ladish-logo-128x128.png" />
 </head>
 <body class="article">
+<div class="banner">
+  <a href="https://ladish.org/">
+    <img src="ladish_dark.png" alt="LADI Session Handler" height="140" width="497" />
+  </a>
+</div>
 <div id="header">
-<h1>ladish, LADI Session Handler</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph"><p>ladish is a session handler for <a href="https://kernel.org/">Linux</a>
-and <a href="https://jackaudio.org">JACK</a>.</p></div>
-<div class="paragraph"><p>The LADISH graphical interface (GTK+ based reference front end)
+<div class="paragraph"><div class="title">LADI Session Handler</div><p>LADI Session Handler or simply ladish is a session management system
+for <a href="https://jackaudio.org">JACK</a> applications on <a href="https://kernel.org/">GNU/Linux</a>.
+Its aim is to allow you to have many different audio programs running
+at once, to save their setup, close them down and then easily reload
+the setup at some other time. ladish doesn' deal with any kind of
+audio or MIDI data itself; it just runs programs, deals with
+saving/loading (arbitrary) data and connects JACK ports together. It
+can also be used to move entire sessions between computers, or post
+sessions on the Internet for download. Check the project goals for
+more info.</p></div>
+<div class="paragraph"><div class="title">LADI Session Handler</div><p>The LADISH graphical interface (GTK+ based reference front end)
 <span class="image">
 <a class="image" href="https://lwn.net/Articles/533594/">
-<img src="https://static.lwn.net/images/2013/audio-session/1-gladish-reteo.png" alt="gladish screenshot" width="100%" />
+<img src="https://static.lwn.net/images/2013/audio-session/1-gladish-reteo.png" alt="gladish screenshot" width="100%" title="LADI Session Handler">
 </a>
 </span></p></div>
-<div class="paragraph"><p>The Claudia LADISH front end (Python + Qt based)
+<div class="paragraph"><div class="title">LADI Session Handler</div><p>The Claudia LADISH front end (Python + Qt based)
 <span class="image">
 <a class="image" href="https://lwn.net/Articles/533594/">
-<img src="https://static.lwn.net/images/2013/audio-session/2-claudia.png" alt="Claudia screenshot" width="100%" />
+<img src="https://static.lwn.net/images/2013/audio-session/2-claudia.png" alt="Claudia screenshot" width="100%" title="LADI Session Handler">
 </a>
 </span></p></div>
-<div class="paragraph"><p>GIT repositories:</p></div>
-<div class="ulist"><ul>
+<div class="paragraph"><div class="title">LADI Session Handler</div><p>GIT repositories:</p></div>
+<div class="ulist"><div class="title">LADI Session Handler</div><ul>
 <li>
 <p>
-<a href="https://github.com/LADI/ladish.git">LADI/ladish at github.com</a><br />
+<a href="https://github.com/LADI/ladish.git">LADI/ladish at github.com</a><br>
    Cloud hosted
 </p>
 </li>
 <li>
 <p>
-<a href="https://repo.or.cz/ladish.git">Primary backup GIT repository at repo.or.cz</a><br />
+<a href="https://repo.or.cz/ladish.git">Primary backup GIT repository at repo.or.cz</a><br>
    Cloud hosted
 </p>
 </li>
 <li>
 <p>
-<a href="https://git.nedk.org/lad/ladish.git">Upstream development GIT repository</a><br />
+<a href="https://git.nedk.org/lad/ladish.git">Upstream development GIT repository</a><br>
    The network node has issues, SSL certificate has expired and node needs reinstall
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>See also:</p></div>
-<div class="ulist"><ul>
+<div class="paragraph"><div class="title">LADI Session Handler</div><p>See also:</p></div>
+<div class="ulist"><div class="title">LADI Session Handler</div><ul>
 <li>
 <p>
 <a href="https://github.com/LADI/">LADI at GitHub</a>
@@ -704,16 +750,25 @@ and <a href="https://jackaudio.org">JACK</a>.</p></div>
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>For related discussions, you are invited to join
+<div class="paragraph"><div class="title">LADI Session Handler</div><p>For related discussions, you are invited to join
 <a href="https://libera.chat/">Libera.Chat</a> channel #ladi</p></div>
 </div>
-</div>
-</div>
-<div id="footnotes"><hr /></div>
+<div id="footnotes"><hr></div>
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2022-09-17 15:38:16 EEST
+ 2022-09-17 20:08:57 EEST
+</div>
+<div id="footer-badges">
+<a href="http://validator.w3.org/check?uri=referer">
+  <img src="http://www.w3.org/html/logo/badge/html5-badge-h-solo.png"
+       width="30" alt="HTML5 Powered" title="HTML5 Powered">
+</a>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+  <img style="border:0;width:88px;height:31px"
+    src="http://www.w3.org/Icons/valid-css"
+    alt="Valid CSS!">
+</a>
 </div>
 </div>
 </body>

@@ -1,8 +1,17 @@
-:docinfo: private-head
-= ladish, LADI Session Handler
+:title: LADI Session Handler
+:docinfo: private-head,private-header
+:keywords: LADI, JACK, jack-audio-connection-kit, session management
 
-ladish is a session handler for https://kernel.org/[Linux]
-and https://jackaudio.org[JACK].
+LADI Session Handler or simply ladish is a session management system
+for https://jackaudio.org[JACK] applications on https://kernel.org/[GNU/Linux].
+Its aim is to allow you to have many different audio programs running
+at once, to save their setup, close them down and then easily reload
+the setup at some other time. ladish doesn' deal with any kind of
+audio or MIDI data itself; it just runs programs, deals with
+saving/loading (arbitrary) data and connects JACK ports together. It
+can also be used to move entire sessions between computers, or post
+sessions on the Internet for download. Check the project goals for
+more info.
 
 The LADISH graphical interface (GTK+ based reference front end)
 image:https://static.lwn.net/images/2013/audio-session/1-gladish-reteo.png["gladish screenshot", link="https://lwn.net/Articles/533594/", width="100%"]
