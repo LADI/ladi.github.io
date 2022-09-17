@@ -10,16 +10,20 @@ Its aim is to allow you to have many different audio programs running
 at once, to save their setup, close them down and then easily reload
 the setup at some other time. ladish doesn' deal with any kind of
 audio or MIDI data itself; it just runs programs, deals with
-saving/loading (arbitrary) data and connects JACK ports together. It
-can also be used to move entire sessions between computers, or post
-sessions on the Internet for download. Check the project goals for
-more info.
+saving/loading (arbitrary) data and connects JACK ports together.
 
 The LADISH graphical interface (GTK+ based reference front end)
 image:https://static.lwn.net/images/2013/audio-session/1-gladish-reteo.png["gladish screenshot", link="https://lwn.net/Articles/533594/", width="100%"]
 
 The Claudia LADISH front end (Python + Qt based)
 image:https://static.lwn.net/images/2013/audio-session/2-claudia.png["Claudia screenshot", link="https://lwn.net/Articles/533594/", width="100%"]
+
+Among project future goals are:
+
+ * ability to move entire sessions between computers,
+   or post sessions on the Internet for download.
+ * Saving/resotring state in nulti-machine network
+ * Session versioning via Git
 
 GIT repositories:
 
