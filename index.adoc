@@ -1,0 +1,27 @@
+= ladish, LADI Session Handler
+
+ladish is a session handler for https://kernel.org/[Linux]
+and https://jackaudio.org[JACK].
+
+The LADISH graphical interface (GTK+ based reference front end)
+image:https://static.lwn.net/images/2013/audio-session/1-gladish-reteo.png["gladish screenshot", link="https://lwn.net/Articles/533594/", width="100%"]
+
+The Claudia LADISH front end (Python + Qt based)
+image:https://static.lwn.net/images/2013/audio-session/2-claudia.png["Claudia screenshot", link="https://lwn.net/Articles/533594/", width="100%"]
+
+GIT repositories:
+
+ * https://github.com/LADI/ladish.git[LADI/ladish at github.com] +
+   Cloud hosted
+ * https://repo.or.cz/ladish.git[Primary backup GIT repository at repo.or.cz] +
+   Cloud hosted
+ * https://git.nedk.org/lad/ladish.git[Upstream development GIT repository] +
+   The network node has issues, SSL certificate has expired and node needs reinstall
+
+See also:
+
+ * https://github.com/LADI/[LADI at GitHub]
+ * https://ladish.org/jackdbus.html[jackdbus]
+
+For related discussions, you are invited to join
+https://libera.chat/[Libera.Chat] channel #ladi
