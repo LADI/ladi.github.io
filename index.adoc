@@ -1,3 +1,4 @@
+:docinfo: private-head
 = ladish, LADI Session Handler
 
 ladish is a session handler for https://kernel.org/[Linux]
