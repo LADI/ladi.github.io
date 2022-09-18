@@ -20,9 +20,9 @@ image:https://static.lwn.net/images/2013/audio-session/2-claudia.png["Claudia sc
 
 Among project future goals are:
 
- * ability to move entire sessions between computers,
+ * Ability to move entire sessions between computers,
    or post sessions on the Internet for download.
- * Saving/resotring state in nulti-machine network
+ * Saving/restoring state in multi-machine network
  * Session versioning via Git
 
 GIT repositories:
