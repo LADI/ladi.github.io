@@ -18,6 +18,15 @@ image:https://static.lwn.net/images/2013/audio-session/1-gladish-reteo.png["glad
 The Claudia LADISH front end (Python + Qt based)
 image:https://static.lwn.net/images/2013/audio-session/2-claudia.png["Claudia screenshot", link="https://lwn.net/Articles/533594/", width="100%"]
 
+LADI Session Handler was forked from the
+https://lac.linuxaudio.org/2009/cdm/Thursday/02_Alasuutari/02.pdf[D-Bus-ified LASH project].
+The main feature that LADISH has but LASH does not is
+subgraph management, that is Studio & Rooms concept, which
+allows to decouple projects (loaded in a Room) from
+hardware audio IO used in particular Studio.
+A virtual jack-multicore cable connects room IO ports
+to hardware IO ports.
+
 Among project future goals are:
 
  * Ability to move entire sessions between computers,
@@ -38,6 +47,7 @@ See also:
 
  * https://github.com/LADI/[LADI at GitHub]
  * https://ladish.org/jackdbus.html[jackdbus]
+ * https://lac.linuxaudio.org/2009/cdm/Thursday/02_Alasuutari/02.pdf[Juuso ALASUUTARI, LASH Audio Session Handler: Past, Present, and Future]
 
 For related discussions, you are invited to join
 https://libera.chat/[Libera.Chat] channel #ladi
