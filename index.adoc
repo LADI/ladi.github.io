@@ -42,7 +42,7 @@ Among project future goals are:
  * Saving/restoring state in multi-machine network
  * Session versioning via Git
  * https://ladish.org/nsm-proto.html[Non Session Manager protocol] support
- * https://new-session-manager.jackaudio.org/api/index.html[New Session Manager protoco] support
+ * https://new-session-manager.jackaudio.org/api/index.html[New Session Manager protocol] support
 
 GIT repositories:
 
