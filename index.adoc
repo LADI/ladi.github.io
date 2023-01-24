@@ -20,12 +20,19 @@ image:https://static.lwn.net/images/2013/audio-session/2-claudia.png["Claudia sc
 
 LADI Session Handler was forked from the
 https://lac.linuxaudio.org/2009/cdm/Thursday/02_Alasuutari/02.pdf[D-Bus-ified LASH project].
-The main feature that LADISH has but LASH does not is
-subgraph management, that is Studio & Rooms concept, which
-allows to decouple projects (loaded in a Room) from
-hardware audio IO used in particular Studio.
-A virtual jack-multicore cable connects room IO ports
-to hardware IO ports.
+Things that LADISH can do but LASH (D-Bus-ified or not) cannot:
+ * subgraph management, that is Studio & Rooms concept,
+   which allows to decouple projects (loaded in a Room) from
+   hardware audio IO used in particular Studio.
+   A virtual jack-multicore cable connects room IO ports
+   to hardware IO ports.
+ * Suppport for apps that don\'t link to liblash.
+   This is known as L0 in LADISH.
+ * Seamless handling of apps using ALSA sequencer ports.
+   This is achieved by use of a2jmidid and libalsapid.so.
+   The former which creates jack-midi ports for the alsa sequencer ones.
+   The latter reports the alsa application process ID to ladishd,
+   so that ladishd can associate the a2jmidid-created ports with application.
 
 Among project future goals are:
 
@@ -33,6 +40,8 @@ Among project future goals are:
    or post sessions on the Internet for download.
  * Saving/restoring state in multi-machine network
  * Session versioning via Git
+ * https://ladish.org/nsm-proto.html[Non Session Manager protocol support]
+ * https://new-session-manager.jackaudio.org/api/index.html[New Session Manager protocol support]
 
 GIT repositories:
 
