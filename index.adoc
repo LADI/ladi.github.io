@@ -31,7 +31,7 @@ Things that LADISH can do but LASH (D-Bus-ified or not) cannot:
    This is known as L0 in LADISH.
  * Seamless handling of apps using ALSA sequencer ports.
    This is achieved by use of a2jmidid and libalsapid.so.
-   The former which creates jack-midi ports for the alsa sequencer ones.
+   The former creates jack-midi ports for the alsa sequencer ones.
    The latter reports the alsa application process ID to ladishd,
    so that ladishd can associate the a2jmidid-created ports with application.
 
