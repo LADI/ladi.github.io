@@ -716,13 +716,20 @@ saving/loading (arbitrary) data and connects JACK ports together.</p></div>
 <img src="https://static.lwn.net/images/2013/audio-session/2-claudia.png" alt="Claudia screenshot" width="100%">
 </a>
 </span></p></div>
-<div class="paragraph"><p>LADI Session Handler was forked from the
-<a href="https://lac.linuxaudio.org/2009/cdm/Thursday/02_Alasuutari/02.pdf">D-Bus-ified LASH project</a>.
-Things that LADISH can do but LASH (D-Bus-ified or not) cannot:</p></div>
+<div class="paragraph"><p>Features:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
+Save and restore sets of JACK (audio and MIDI) enabled
+   applications.
+</p>
+</li>
+<li>
+<p>
 Subgraph management, the Studio &amp; Rooms concept.
+   Provide JACK clients with virtual hardware ports, so projects can
+   be transfered (or backups restored) between computers running
+   different hardware and backups.
    Allows to decouple projects (loaded in a Room) from
    hardware audio IO used in particular Studio.
    A virtual jack-multicore cable connects room IO ports
@@ -731,8 +738,10 @@ Subgraph management, the Studio &amp; Rooms concept.
 </li>
 <li>
 <p>
-Suppport for apps that don't link to liblash.
-   This is known as L0 in LADISH.
+Don&#8217;t require session handling library to be used. There is no need
+   of such library for restoring connections between JACK clients.
+   LADISH is able to manage JACK apps that don't link to liblash (or liblo).
+   This is known as L0 (level zero) in LADISH.
 </p>
 </li>
 <li>
@@ -744,23 +753,47 @@ Seamless handling of apps using ALSA sequencer ports.
    so that ladishd can associate the a2jmidid-created ports with application.
 </p>
 </li>
+<li>
+<p>
+Flow canvas based GUI. Positions of elements on the canvas are
+   saved/restored.
+</p>
+</li>
+<li>
+<p>
+Allow clients to use external storage to save their state. This
+   includes storing internal state to non-filesystem place like memory
+   of a hardware synth. This also includes storing client internal
+   state (client project data) in a way that is not directly bound to
+   ladish project.
+</p>
+</li>
 </ul></div>
 <div class="paragraph"><p>Among project future goals are:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-Ability to move entire sessions between computers,
-   or post sessions on the Internet for download.
+Support for pipewire setups (in addition JACK1 and JACK2)
 </p>
 </li>
 <li>
 <p>
-Saving/restoring state in multi-machine network
+List of available JACK applications.
 </p>
 </li>
 <li>
 <p>
-Session versioning via Git
+Hierarchical and/or tag-based organization of projects.
+</p>
+</li>
+<li>
+<p>
+Support for applications that create more than one jack client per process
+</p>
+</li>
+<li>
+<p>
+Support for applications that create use more than one jack client process
 </p>
 </li>
 <li>
@@ -771,6 +804,36 @@ Session versioning via Git
 <li>
 <p>
 <a href="https://new-session-manager.jackaudio.org/api/index.html">New Session Manager protocol</a> support
+</p>
+</li>
+<li>
+<p>
+Collaborate with the X11 window manager so window properties like
+   window position, virtual desktop and screen (multimonitor) are
+   saved/restored.
+</p>
+</li>
+<li>
+<p>
+Distributed studio - network connected computers. Netjack
+   configuration is part of the studio and thus is saved/restored.
+   Saving/restoring state in multi-machine network
+</p>
+</li>
+<li>
+<p>
+Ability to move entire sessions between computers,
+   or post sessions on the Internet for download.
+   Import/export operations, as opposed to save/load. Save/load
+   operate in current system and may cause saving data outside of
+   project itself (external storage). Import/export uses/produces
+   "tarball" suitable for transferring session data over network to
+   other computer or storing it in a backup archive.
+</p>
+</li>
+<li>
+<p>
+Session versioning via Git
 </p>
 </li>
 </ul></div>
@@ -792,6 +855,37 @@ Session versioning via Git
 <p>
 <a href="https://git.nedk.org/lad/ladish.git">Upstream development GIT repository</a><br>
    The network node has issues, SSL certificate has expired and node needs reinstall
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>LADI Session Handler was forked from the
+<a href="https://lac.linuxaudio.org/2009/cdm/Thursday/02_Alasuutari/02.pdf">D-Bus-ified LASH project</a>.
+Things that LADISH can do but LASH (D-Bus-ified or not) cannot:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Subgraph management, the Studio &amp; Rooms concept.
+   Allows to decouple projects (loaded in a Room) from
+   hardware audio IO used in particular Studio.
+   A virtual jack-multicore cable connects room IO ports
+   to hardware IO ports.
+</p>
+</li>
+<li>
+<p>
+Don&#8217;t require session handling library to be used. There is no need
+   of such library for restoring connections between JACK clients.
+   LADISH is able to manage JACK apps that don't link to liblash (or liblo).
+   This is known as L0 (level zero) in LADISH.
+</p>
+</li>
+<li>
+<p>
+Seamless handling of apps using ALSA sequencer ports.
+   This is achieved by use of a2jmidid and libalsapid.so.
+   The former creates jack-midi ports for the alsa sequencer ones.
+   The latter reports the alsa application process ID to ladishd,
+   so that ladishd can associate the a2jmidid-created ports with application.
 </p>
 </li>
 </ul></div>
@@ -822,7 +916,7 @@ Session versioning via Git
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2023-02-02 15:19:57 EET
+ 2023-04-19 18:26:16 EEST
 </div>
 </div>
 </body>
