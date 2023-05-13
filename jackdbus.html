@@ -995,7 +995,7 @@ D-Bus signals.</p></div>
 <h3 id="_jack_d_bus_enabled_applications">JACK D-Bus enabled applications</h3>
 <div class="sect3">
 <h4 id="_jack_control">jack_control</h4>
-<div class="paragraph"><p>JACK contains "jack_control" executable a 300 lines of Python exposing
+<div class="paragraph"><p>JACK contains "jack_control" executable, <a href="https://gitea.ladish.org/LADI/jackdbus/src/branch/stable/dbus/jack_control">a 300 lines of Python</a> exposing
 JACK D-Bus functionality. It allows chained execution of several commands.
 For example "jack control ds alsa dps midi-driver raw eps realtime on
 eps relatime-priority 70 start" selects ALSA driver, enables JACK MIDI
@@ -1004,7 +1004,7 @@ JACK server.</p></div>
 </div>
 <div class="sect3">
 <h4 id="_ladi_tools">LADI Tools</h4>
-<div class="paragraph"><p>LADI Tools is a set of programs to configure, control and monitor JACK.
+<div class="paragraph"><p><a href="https://gitea.ladish.org/LADI/laditools">LADI Tools</a> is a set of programs to configure, control and monitor JACK.
 It provides tray icon, Window Maker style dockapp,
 G15 keyboard LCD display integration application,
 configuration utility for managing JACK settings
@@ -1013,13 +1013,14 @@ and log file monitor application.</p></div>
 </div>
 <div class="sect3">
 <h4 id="_patchage">Patchage</h4>
-<div class="paragraph"><p>Patchage, the ubiquitous canvas modular patch bay can be compiled to use
+<div class="paragraph"><p><a href="https://drobilla.net/software/patchage.html">Patchage</a>, the ubiquitous canvas modular patch bay can be compiled to use
 D-Bus instead of libjack to communicate with JACK.</p></div>
 <div class="paragraph"><p>Doing so also enables JACK server start/stop functionality in Patchage.</p></div>
+<div class="paragraph"><p>Various JACK related features are implemented:</p></div>
 </div>
 <div class="sect3">
 <h4 id="_ladi_session_handler_ladish">LADI Session handler (LADISH)</h4>
-<div class="paragraph"><p>LADISH, a rewrite of LASH session handler
+<div class="paragraph"><p><a href="https://ladish.org/">LADISH</a>, a rewrite of LASH session handler
 uses D-Bus to communicate with JACK.</p></div>
 <div class="paragraph"><p>Various JACK related features are implemented:</p></div>
 <div class="ulist"><ul>
@@ -1036,6 +1037,22 @@ can reconnect to it, and restoring JACK connections.
 </p>
 </li>
 </ul></div>
+</div>
+<div class="sect3">
+<h4 id="_qjackctl_jack_audio_connection_kit_qt_gui_interface">QjackCtl JACK Audio Connection Kit - Qt GUI Interface</h4>
+<div class="paragraph"><p><a href="https://qjackctl.sourceforge.io/">QjackCtl</a> is a simple Qt application
+to control the JACK sound server daemon, is another jackdbus frontend.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_kxstudio_cadence">KXStudio Cadence</h4>
+<div class="paragraph"><p><a href="https://kx.studio/Applications:Cadence">Cadence</a>, a set of tools
+useful for audio production, is another jackdbus frontend.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_studio_controls">Studio Controls</h4>
+<div class="paragraph"><p><a href="https://ovenwerks.github.io/studio-controls/">Studio Controls</a>, a way to
+configure your Linux-based audio installation for real-time audio, is
+another jackdbus frontend.</p></div>
 </div>
 </div>
 </div>
@@ -1057,7 +1074,7 @@ can reconnect to it, and restoring JACK connections.
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2023-05-12 10:45:02 EEST
+ 2023-05-13 19:34:44 EEST
 </div>
 </div>
 </body>
