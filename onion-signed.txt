@@ -1,0 +1,26 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+.org address: ladish.org
+.onion address: hax624dyuikhwcxbribxmdciyvaic3unocales7xnrkijzy3uifsevyd.onion
+
+services: HTTP, HTTPS
+
+The x509 .onion certificate is signed via https://acmeforonions.org/
+so verifications requires trust setup for the "AS207960 Test CA".
+
+This file is signed. To verify the signature:
+
+cat onion-signed.txt | gpg --verify -
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEGSV2jJsI9H/4N8RceGK55F0bWO0FAmVw08wACgkQeGK55F0b
+WO1RSggAmobji+iAJQsF36yzBrgKSEF8HlT1Qe5lpCRAWOcHC0eDpzcrXnmXt9n/
+9zUDFsIIm6XV9AetuIvwT5EGsjBdHuTPV295BNNpv5aPkiXfNw8LBrGpXjCnrHjP
+lKLkob4OZ0NmBZGAOr9Zszw9ofRIQX9yYO1DphmsLORFm6+i0lIKxQCjRIxKZTSZ
+kDp7vNYgeyN4S5giMfLDE+edU43wJp7JXcWiH3BXRAZmBc4ZSgc/gaXgqUx/cqjI
+Rr9DnOV9Pgrzxa6QZSDRLq5ZPJqMTXoY6EOkVu3NQDih+I+6tRzOU8eVrraCX5qi
+uKBDu8fFv7s2cb8m8JmRIb+xyAaCnA==
+=abM2
+-----END PGP SIGNATURE-----

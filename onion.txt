@@ -1,0 +1,12 @@
+.org address: ladish.org
+.onion address: hax624dyuikhwcxbribxmdciyvaic3unocales7xnrkijzy3uifsevyd.onion
+
+services: HTTP, HTTPS
+
+The x509 .onion certificate is signed via https://acmeforonions.org/
+so verifications requires trust setup for the "AS207960 Test CA".
+
+This file is signed. To verify the signature:
+
+cat onion-signed.txt | gpg --verify -
+
