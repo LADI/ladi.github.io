@@ -684,6 +684,160 @@ asciidoc.install();
 </div>
 <div id="content">
 <div class="sect1">
+<h2 id="_nextstable_mmm_dd_yy_20zz">nextstable: MMM DD, YY (20ZZ)</h2>
+<div class="sectionbody">
+<div class="ulist"><ul>
+<li>
+<p>
+new: sys-libs/cdbus-9999.ebuild
+</p>
+</li>
+<li>
+<p>
+upd: media-sound/ladish
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+1.9999&amp;9999: follow README update and its rename to README.adoc
+</p>
+</li>
+<li>
+<p>
+1.9999: follow latest 1-stable branch (instead of fixed commit)
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+new: media-sound/jack_mixer<br>
+   Bring back ebuilds for older versions of jack_mixer,
+   11, 12, 13. Also version 8 (py2 only).
+</p>
+</li>
+<li>
+<p>
+upd: media-sound/jackdbus: adjust homepage URL
+</p>
+</li>
+<li>
+<p>
+new: media-libs/lsp-plugins
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+1.2.7: upstream version bump
+</p>
+</li>
+<li>
+<p>
+1.2.8: upstream version bump
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+new: media-sound/cadence-9999-r7
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Import from audio-overlay
+</p>
+</li>
+<li>
+<p>
+Adjust for media-sound/jackdbus
+</p>
+</li>
+<li>
+<p>
+Extend PYTHON_COMPAT for 3.11 and 3.12
+</p>
+</li>
+<li>
+<p>
+Relax media-sound/ladish dependency constraint
+</p>
+</li>
+<li>
+<p>
+Make ladish and a2jmidid use flags enabled by default
+</p>
+</li>
+<li>
+<p>
+Adjust HOMEPAGE to kx.studio domain
+</p>
+</li>
+<li>
+<p>
+Switch default for /org/ladish/daemon/terminal to xterm
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+new: media-sound/synthclone-9999-r1.ebuild
+</p>
+</li>
+<li>
+<p>
+new: sys-apps/dbus
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+dbus-1.15.6.1.ebuild &amp; dbus-1.15.9999-r1.ebuild from git branch ladi-dbus-1.15
+</p>
+</li>
+<li>
+<p>
+This modification reverts unix abstract socket code removal in dbus upstream
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+new: media-sound/jack-audio-connection-kit: new ladi-jack 1.9999 ebuild
+</p>
+</li>
+<li>
+<p>
+new: media-sound/jack2: add a 2.23.1.ebuild (from tarball)
+</p>
+</li>
+<li>
+<p>
+upd: media-sound/jack2:
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+2.9999: adjust for latest ladi-jack2
+</p>
+</li>
+<li>
+<p>
+2.9999: mask stable arches so that 2.23.1 ebuild gets into effect by default
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+new: media-sound/jack-tools-9999.ebuild: LADI version of media-sound/jack-example-tools
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_newstable_may_2_53_2023">newstable: May 2, 53 (2023)</h2>
 <div class="sectionbody">
 <div class="ulist"><ul>
@@ -735,13 +889,10 @@ upstream update of README and its rename to README.adoc
 <div class="ulist"><ul>
 <li>
 <p>
-new: asciidoc-9999.ebuild
+new: asciidoc-9999.ebuild<br>
+   This ebuild provides ladoc-py variant of asciidoc
+   Two modifications against upstream asciidoc-py are maintained:
 </p>
-<div class="literalblock">
-<div class="content monospaced">
-<pre>This ebuild provides ladoc-py variant of asciidoc
-Two modifications against upstream asciidoc-py are maintained:</pre>
-</div></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -1058,7 +1209,7 @@ Restore gladish build, remove obsolete ebuild
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2023-05-02 19:31:52 EEST
+ 2024-01-03 21:44:57 EET
 </div>
 </div>
 </body>
