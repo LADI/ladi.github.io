@@ -678,7 +678,7 @@ install: function(toclevels) {
 }
 
 }
-asciidoc.install();
+asciidoc.install(2);
 /*]]>*/
 </script>
 <style>
@@ -700,6 +700,10 @@ asciidoc.install();
 
 <div id="header">
 <h1>Using PipeWire under LADIOS</h1>
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
@@ -762,12 +766,43 @@ wpctl set-profile 64 3
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_adjust_pipewire_configuration_for_jack">Adjust pipewire configuration for JACK</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>In apropriate pipewire configuration file,
+set jack.self-connect mode to ignore-external
+and optionally enable aliases:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt># global properties for all jack clients
+jack.properties = {
+     jack.self-connect-mode = ignore-external
+     jack.fill-aliases = true
+}</tt></pre></div></div>
+<div class="paragraph"><p>LADIOS specific configuration files for pipewire are:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+per-user at <code>~/.config/pipewire/jack.conf.d/ladi.conf</code>
+</p>
+</li>
+<li>
+<p>
+system-wide at <code>/etc/pipewire/pipewire.conf.d/ladi.conf</code>
+</p>
+</li>
+</ul></div>
+</div>
+</div>
 </div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2024-12-26 21:56:08 EET
+ 2024-12-26 22:20:57 EET
 </div>
 </div>
 </body>
