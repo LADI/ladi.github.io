@@ -711,11 +711,8 @@ asciidoc.install();
 <h2 id="_setting_profile_of_default_audio_device_to_pro_audio">Setting profile of default audio device to "pro audio"</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>These instructions are based on <a href="https://linuxmusicians.com/viewtopic.php?p=171612&amp;sid=86f8d178c3ea77bf174e53e82c31f4e6#p171612">Fedora Pipewire Low Latency Audio Configuration Reference Guide V.1.02</a></p></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_method_1_use_one_line_script">method 1, Use one line script</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_method_1_use_one_line_script">method 1, Use one line script</h3>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight
 by Lorenzo Bettini
@@ -731,10 +728,8 @@ http://www.gnu.org/software/src-highlite -->
 <span style="color: #FF0000">' if p["name"] == "pro-audio");'</span><span style="color: #990000">\</span>
 <span style="color: #FF0000">'print("wpctl set-profile", dev["id"], profile["index"])'</span> <span style="color: #990000">|</span> bash</tt></pre></div></div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_method_2_using_wp_profile_tool">method 2, Using wp-profile tool</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_method_2_using_wp_profile_tool">method 2, Using wp-profile tool</h3>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight
 by Lorenzo Bettini
@@ -767,11 +762,12 @@ wpctl set-profile 64 3
 </div>
 </div>
 </div>
+</div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2024-12-26 20:47:20 EET
+ 2024-12-26 21:56:08 EET
 </div>
 </div>
 </body>
